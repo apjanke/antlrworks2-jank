@@ -15,7 +15,7 @@
     <orderEntry type="library" name="Maven: org.checkerframework:jdk8:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.errorprone:javac:9+181-r4173-1" level="project" />
     <orderEntry type="module" module-name="antlr-works-netbeans" />
-    <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-api-annotations-common:${project.netbeansversion}" level="project" />
+    <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-api-annotations-common:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-spi-palette:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-awt:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-dialogs:RELEASE112" level="project" />

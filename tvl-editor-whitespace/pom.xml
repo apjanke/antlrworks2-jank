@@ -44,72 +44,72 @@
       <dependency>
          <groupId>org.netbeans.api</groupId>
          <artifactId>org-netbeans-api-annotations-common</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
       <dependency>
          <groupId>org.netbeans.api</groupId>
          <artifactId>org-netbeans-spi-palette</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
       <dependency>
          <groupId>org.netbeans.api</groupId>
          <artifactId>org-netbeans-modules-editor</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
       <dependency>
          <groupId>org.netbeans.api</groupId>
          <artifactId>org-netbeans-modules-editor-util</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
       <dependency>
          <groupId>org.netbeans.api</groupId>
          <artifactId>org-netbeans-modules-editor-fold</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
       <dependency>
          <groupId>org.netbeans.api</groupId>
          <artifactId>org-openide-util-ui</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
       <dependency>
          <groupId>org.netbeans.api</groupId>
          <artifactId>org-netbeans-modules-editor-lib</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
       <dependency>
          <groupId>org.netbeans.api</groupId>
          <artifactId>org-netbeans-modules-editor-mimelookup</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
       <dependency>
          <groupId>org.netbeans.api</groupId>
          <artifactId>org-netbeans-modules-editor-settings</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
       <dependency>
          <groupId>org.netbeans.modules</groupId>
          <artifactId>org-netbeans-modules-editor-settings-storage</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
       <dependency>
          <groupId>org.netbeans.api</groupId>
          <artifactId>org-netbeans-modules-options-api</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
       <dependency>
          <groupId>org.netbeans.api</groupId>
          <artifactId>org-netbeans-spi-editor-hints-projects</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
       <dependency>
          <groupId>org.netbeans.api</groupId>
          <artifactId>org-netbeans-spi-navigator</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
       <dependency>
          <groupId>org.netbeans.api</groupId>
          <artifactId>org-netbeans-modules-parsing-indexing</artifactId>
-         <version>RELEASE112</version>
+         <version>${netbeans.version}</version>
       </dependency>
    </dependencies>
 
