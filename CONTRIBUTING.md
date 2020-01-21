@@ -1,10 +1,10 @@
-## Contributor Agreement (required for pull requests)
+# Contributor Agreement (required for pull requests)
 
 While the ANTLRWorks 2 project is open source under the LGPL license, contributions
 back to this project which contain code must be made available to Tunnel Vision
 Laboratories, LLC under the terms of the MIT license.
 
-### What does this mean?
+## What does this mean?
 
 This means Tunnel Vision Laboratories, LLC can do the following with code contributed
 back to the project from the open source community.
@@ -13,12 +13,14 @@ back to the project from the open source community.
 2. Include the code, in original or modified form, in other products created by Tunnel
    Vision Labs, **including closed-source products**.
 
-### How do I agree to these terms?
+## How do I agree to these terms?
 
 To agree to these terms, sign the contributing agreement in `CONTRIBUTORS.md` and
-include the change as a commit with your pull request. **Pull requests which contain
+include the change as a signed commit with your pull request. **Pull requests which contain
 commits from users not explicitly listed in the `CONTRIBUTORS.md` file will be
-rejected *without review*.**
+rejected.** Please 
+[GPG-sign your commit](https://git-scm.com/book/en/v2/Git-Tools-Signing-Your-Work)
+that adds you to `CONTRIBUTORS.md`.
 
 * You only need to sign the `CONTRIBUTORS.md` file prior to the first time you
   submit a pull request (or include it as part of the pull request itself).

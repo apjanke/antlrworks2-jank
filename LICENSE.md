@@ -14,7 +14,9 @@ DO NOT CLICK "ACCEPT" OR THE EQUIVALENT AND DO NOT INSTALL
 OR USE THIS SOFTWARE.**
 
 Copyright &copy; 2013, Tunnel Vision Laboratories, LLC
-and/or its affiliates. All rights reserved.
+and/or its affiliates.
+Portions Copyright &copy; 2020, Andrew Janke.
+All rights reserved.
 
 The Product contains the ANTLRWorks 2 IDE and other
 components. Review the Product carefully to determine
