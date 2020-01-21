@@ -38,7 +38,6 @@ import org.antlr.v4.runtime.Token;
 import org.antlr.v4.tool.Grammar;
 import org.antlr.works.editor.grammar.completion.GrammarCompletionProvider;
 import org.antlr.works.editor.grammar.experimental.GrammarLexer;
-import org.antlr.works.editor.grammar.experimental.GrammarParser;
 import org.openide.filesystems.FileObject;
 import org.openide.loaders.DataObject;
 import org.openide.util.Exceptions;
@@ -66,10 +65,6 @@ public class GoToSupport {
         }
 
         switch (token.getType()) {
-        case GrammarParser.RULE_REF:
-        case GrammarParser.TOKEN_REF:
-        case GrammarParser.ACTION_REFERENCE:
-            break;
 
         case GrammarLexer.ARG_ACTION_WORD:
             if (token.getText().charAt(0) != '$') {
