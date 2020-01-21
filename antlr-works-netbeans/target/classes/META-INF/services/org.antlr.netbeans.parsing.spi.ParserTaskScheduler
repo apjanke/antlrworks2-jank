@@ -1,0 +1,6 @@
+org.antlr.netbeans.parsing.spi.impl.CurrentDocumentParserTaskScheduler
+org.antlr.netbeans.parsing.spi.impl.CursorSensitiveParserTaskScheduler
+org.antlr.netbeans.parsing.spi.impl.DataInputParserTaskScheduler
+org.antlr.netbeans.parsing.spi.impl.DocumentContentParserTaskScheduler
+org.antlr.netbeans.parsing.spi.impl.ManualParserTaskScheduler
+org.antlr.netbeans.parsing.spi.impl.SelectedNodesParserTaskScheduler
