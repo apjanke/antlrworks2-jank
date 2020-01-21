@@ -74,11 +74,6 @@
       </dependency>
       <dependency>
          <groupId>org.netbeans.api</groupId>
-         <artifactId>org-netbeans-modules-options-editor</artifactId>
-         <version>RELEASE112</version>
-      </dependency>
-      <dependency>
-         <groupId>org.netbeans.api</groupId>
          <artifactId>org-netbeans-spi-editor-hints-projects</artifactId>
          <version>RELEASE112</version>
       </dependency>

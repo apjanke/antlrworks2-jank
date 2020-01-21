@@ -75,7 +75,7 @@
     </dependencies>
 
     <properties>
-        <netbeans.version>RELEASE112</netbeans.version>
+        <netbeansversion>RELEASE112</netbeansversion>
         <brandingToken>antlrworks2jank</brandingToken>
         <version>2.6.0-SNAPSHOT</version>
 
