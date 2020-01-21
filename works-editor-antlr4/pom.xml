@@ -30,4 +30,17 @@
       </pluginManagement>
    </build>
 
+   <dependencies>
+      <dependency>
+         <groupId>${project.groupId}</groupId>
+         <artifactId>antlr-works-editor</artifactId>
+         <version>${project.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>${project.groupId}</groupId>
+         <artifactId>antlr-works-netbeans</artifactId>
+         <version>${project.version}</version>
+      </dependency>
+   </dependencies>
+
 </project>

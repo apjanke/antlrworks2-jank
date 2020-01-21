@@ -8,7 +8,7 @@
       <artifactId>antlrworks-jank</artifactId>
       <version>2.6.0-SNAPSHOT</version>
    </parent>
-   <artifactId>works-editor-antlr3</artifactId>
+   <artifactId>antlr-works-editor</artifactId>
    <packaging>jar</packaging>
 
    <build>
@@ -33,13 +33,14 @@
    <dependencies>
       <dependency>
          <groupId>${project.groupId}</groupId>
-         <artifactId>antlr-works-editor</artifactId>
-         <version>${project.version}</version>
-      </dependency>
-      <dependency>
-         <groupId>${project.groupId}</groupId>
          <artifactId>antlr-works-netbeans</artifactId>
          <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+         <groupId>javax.annotation</groupId>
+         <artifactId>javax.annotation-api</artifactId>
+         <version>1.3.2</version>
       </dependency>
    </dependencies>
 </project>

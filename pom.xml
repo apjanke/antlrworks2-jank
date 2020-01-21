@@ -18,6 +18,11 @@
             <name>NetBeans</name>
             <url>http://bits.netbeans.org/nexus/content/groups/netbeans/</url>
         </repository>
+        <repository>
+            <id>atricore</id>
+            <name>Atricore</name>
+            <url>http://repository.atricore.org/m2-release-repository/</url>
+        </repository>
     </repositories>
 
     <build>
@@ -53,7 +58,7 @@
         <module>editor-completionext</module>
         <module>editor-containingfolder</module>
         <module>antlr-works-netbeans</module>
-        <module>org-antlr-works-editor</module>
+        <module>antlr-works-editor</module>
         <module>tvl-editor-actions</module>
         <module>tvl-editor-whitespace</module>
         <module>works-editor-antlr3</module>

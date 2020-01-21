@@ -1,6 +1,7 @@
 /nbproject/private/
 */nbproject/private/
 */release/modules/ext/*.jar
+# Why is this even here? -apjanke
 /org-antlr-works-editor/src/org/antlr/works/editor/grammar/resources/antlr4-complete.jar
 
 # ignore download cache

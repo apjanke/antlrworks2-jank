@@ -27,6 +27,7 @@
     <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-util:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-util-lookup:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-windows:RELEASE112" level="project" />
+    <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-modules-editor-util:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-modules-editor:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-api-progress:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-api-progress-nb:RELEASE112" level="project" />
@@ -38,7 +39,6 @@
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-modules-lexer:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-actions:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-filesystems-nb:RELEASE112" level="project" />
-    <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-modules-editor-util:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-modules-editor-fold:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-modules-editor-settings-lib:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-openide-util-ui:RELEASE112" level="project" />
@@ -51,7 +51,6 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.modules:org-netbeans-core:RELEASE112" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.modules:org-netbeans-bootstrap:RELEASE112" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.api:org-netbeans-modules-keyring:RELEASE112" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.api:org-netbeans-modules-sampler:RELEASE112" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.api:org-netbeans-swing-plaf:RELEASE112" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.api:org-openide-io:RELEASE112" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.api:org-netbeans-api-intent:RELEASE112" level="project" />
@@ -80,6 +79,15 @@
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-modules-projectuiapi-base:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-modules-queries:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-spi-tasklist:RELEASE112" level="project" />
+    <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-modules-sampler:RELEASE112" level="project" />
+    <orderEntry type="library" name="Maven: org.antlr:antlr4-runtime:4.8-1" level="project" />
+    <orderEntry type="library" name="Maven: org.antlr:stringtemplate:4.0.2" level="project" />
+    <orderEntry type="library" name="Maven: org.antlr:antlr-runtime:3.3" level="project" />
+    <orderEntry type="library" name="Maven: org.antlr:antlr4:4.8-1" level="project" />
+    <orderEntry type="library" name="Maven: org.antlr:ST4:4.3" level="project" />
+    <orderEntry type="library" name="Maven: org.abego.treelayout:org.abego.treelayout.core:1.0.3" level="project" />
+    <orderEntry type="library" name="Maven: org.glassfish:javax.json:1.0.4" level="project" />
+    <orderEntry type="library" name="Maven: com.ibm.icu:icu4j:61.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.13" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
   </component>
