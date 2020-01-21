@@ -32,10 +32,11 @@ information, please see the [`CONTRIBUTING.md`](CONTRIBUTING.md) file.
 
 ### Undersigned
 
-| GitHub Username | Full Name    |
-| --------------- | ------------ |
-| @apjanke        | Andrew Janke |
+| GitHub Username | Full Name    | Email             |
+| --------------- | ------------ | ----------------- |
+| @apjanke        | Andrew Janke | floss@apjanke.net |
 <!-- to sign, include a single line above this comment containing the following text:
-| @username | First Last |
+| @username | First Last | email@example.com |
+The email is optional.
 Then do a signed commit with `git commit -a -S -m 'add <yourname> to Contributors'`
 -->
