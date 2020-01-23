@@ -44,17 +44,6 @@
                     <configuration>
                         <source>8</source>
                         <target>8</target>
-                        <compilerArgs>
-                            <arg>-XDcompilePolicy=simple</arg>
-                            <arg>-Xplugin:ErrorProne</arg>
-                        </compilerArgs>
-                        <annotationProcessorPaths>
-                            <path>
-                                <groupId>com.google.errorprone</groupId>
-                                <artifactId>error_prone_core</artifactId>
-                                <version>2.3.4</version>
-                            </path>
-                        </annotationProcessorPaths>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -66,6 +55,7 @@
     </build>
 
     <modules>
+        <module>branding</module>
         <module>editor-completionext</module>
         <module>editor-containingfolder</module>
         <module>antlr-works-netbeans</module>

@@ -63,9 +63,9 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.modules:org-netbeans-core-startup-base:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-spi-quicksearch:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-swing-outline:RELEASE112" level="project" />
+    <orderEntry type="library" name="Maven: org.netbeans.modules:org-netbeans-modules-options-editor:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-spi-editor-hints-projects:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-modules-editor-tools-storage:RELEASE112" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.modules:org-netbeans-modules-options-editor:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-modules-projectapi:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-modules-projectuiapi:RELEASE112" level="project" />
     <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-spi-editor-hints:RELEASE112" level="project" />
