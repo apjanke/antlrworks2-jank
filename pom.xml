@@ -55,7 +55,7 @@
     </build>
 
     <modules>
-        <module>branding</module>
+        <!-- <module>branding</module> -->
         <module>editor-completionext</module>
         <module>editor-containingfolder</module>
         <module>antlr-works-netbeans</module>
