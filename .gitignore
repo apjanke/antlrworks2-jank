@@ -4,6 +4,10 @@
 # Why is this even here? -apjanke
 /org-antlr-works-editor/src/org/antlr/works/editor/grammar/resources/antlr4-complete.jar
 
+# VS Code stuff
+.project
+.settings
+
 # ignore download cache
 */lib/cache/
 /lib/
