@@ -9,29 +9,29 @@
 package org.antlr.works.editor.antlr4.classification;
 
 import org.antlr.v4.runtime.CharStream;
+import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.TokenFactory;
 import org.antlr.v4.runtime.TokenSource;
-import org.antlr.v4.runtime.misc.Tuple;
-import org.antlr.v4.runtime.misc.Tuple2;
+import org.antlr.v4.runtime.misc.Pair;
 
 /**
  *
  * @author Sam Harwell
  */
-public class DocumentSnapshotTokenFactory implements TokenFactory {
+public class DocumentSnapshotTokenFactory implements TokenFactory<Token> {
 
-    private final Tuple2<? extends TokenSource, CharStream> effectiveSource;
+    private final Pair<TokenSource, CharStream> effectiveSource;
 
     public DocumentSnapshotTokenFactory(TokenSource effectiveSource) {
-        this.effectiveSource = Tuple.create(effectiveSource, effectiveSource.getInputStream());
+        this.effectiveSource = new Pair(effectiveSource, effectiveSource.getInputStream());
     }
 
-    public DocumentSnapshotTokenFactory(Tuple2<? extends TokenSource, CharStream> effectiveSource) {
+    public DocumentSnapshotTokenFactory(Pair<TokenSource, CharStream> effectiveSource) {
         this.effectiveSource = effectiveSource;
     }
 
     @Override
-    public DocumentSnapshotToken create(Tuple2<? extends TokenSource, CharStream> source, int type, String text, int channel, int start, int stop, int line, int charPositionInLine) {
+    public Token create(Pair<TokenSource, CharStream> source, int type, String text, int channel, int start, int stop, int line, int charPositionInLine) {
         if (effectiveSource != null) {
             source = effectiveSource;
         }

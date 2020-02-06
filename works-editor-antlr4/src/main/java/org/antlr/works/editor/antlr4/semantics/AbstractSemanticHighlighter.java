@@ -35,8 +35,7 @@ import org.antlr.netbeans.parsing.spi.ParserDataEvent;
 import org.antlr.netbeans.parsing.spi.ParserDataListener;
 import org.antlr.netbeans.parsing.spi.ParserTaskManager;
 import org.antlr.v4.runtime.Token;
-import org.antlr.v4.runtime.misc.Tuple;
-import org.antlr.v4.runtime.misc.Tuple2;
+import org.antlr.v4.runtime.misc.Pair;
 import org.netbeans.api.annotations.common.NonNull;
 import org.netbeans.api.editor.settings.FontColorSettings;
 import org.netbeans.spi.editor.highlighting.HighlightsChangeEvent;
@@ -164,7 +163,7 @@ public abstract class AbstractSemanticHighlighter<SemanticData> extends Abstract
 
     protected abstract Callable<Void> createAnalyzerTask(final ParserData<? extends SemanticData> parserData);
 
-    protected void addHighlights(List<Tuple2<OffsetRegion, AttributeSet>> intermediateContainer, DocumentSnapshot sourceSnapshot, DocumentSnapshot currentSnapshot, Collection<Token> tokens, AttributeSet attributes) {
+    protected void addHighlights(List<Pair<OffsetRegion, AttributeSet>> intermediateContainer, DocumentSnapshot sourceSnapshot, DocumentSnapshot currentSnapshot, Collection<Token> tokens, AttributeSet attributes) {
         for (Token token : tokens) {
             int startIndex = token.getStartIndex();
             int stopIndex = token.getStopIndex();
@@ -174,27 +173,24 @@ public abstract class AbstractSemanticHighlighter<SemanticData> extends Abstract
 
             TrackingPositionRegion trackingRegion = sourceSnapshot.createTrackingRegion(OffsetRegion.fromBounds(startIndex, stopIndex + 1), Bias.Forward);
             SnapshotPositionRegion region = trackingRegion.getRegion(currentSnapshot);
-            intermediateContainer.add(Tuple.create(region.getRegion(), attributes));
+            intermediateContainer.add(new Pair(region.getRegion(), attributes));
         }
     }
 
-    protected void fillHighlights(OffsetsBag targetContainer, List<Tuple2<OffsetRegion, AttributeSet>> highlights) {
-        Collections.sort(highlights, new Comparator<Tuple2<OffsetRegion, AttributeSet>>() {
-
+    protected void fillHighlights(OffsetsBag targetContainer, List<Pair<OffsetRegion, AttributeSet>> highlights) {
+        highlights.sort(new Comparator<Pair<OffsetRegion, AttributeSet>>() {
             @Override
-            public int compare(Tuple2<OffsetRegion, AttributeSet> o1, Tuple2<OffsetRegion, AttributeSet> o2) {
-                int diff = o1.getItem1().getStart() - o2.getItem1().getStart();
+            public int compare(Pair<OffsetRegion, AttributeSet> o1, Pair<OffsetRegion, AttributeSet> o2) {
+                int diff = o1.a.getStart() - o2.a.getStart();
                 if (diff != 0) {
                     return diff;
                 }
-
-                return o1.getItem1().getEnd() - o2.getItem1().getEnd();
+                return o1.a.getEnd() - o2.a.getEnd();
             }
-
         });
 
-        for (Tuple2<OffsetRegion, AttributeSet> highlight : highlights) {
-            targetContainer.addHighlight(highlight.getItem1().getStart(), highlight.getItem1().getEnd(), highlight.getItem2());
+        for (Pair<OffsetRegion, AttributeSet> highlight : highlights) {
+            targetContainer.addHighlight(highlight.a.getStart(), highlight.a.getEnd(), highlight.b);
         }
     }
 
@@ -232,14 +228,13 @@ public abstract class AbstractSemanticHighlighter<SemanticData> extends Abstract
         }
 
         @Override
-        public void dataChanged(ParserDataEvent<? extends T> event) {
+        public void dataChanged(@NonNull ParserDataEvent<? extends T> event) {
             ParserDataListener<T> listener = getListener();
             if (listener == null) {
                 ParserTaskManager taskManager = Lookup.getDefault().lookup(ParserTaskManager.class);
                 taskManager.removeDataListener(dataDefinition, this);
                 return;
             }
-
             listener.dataChanged(event);
         }
 

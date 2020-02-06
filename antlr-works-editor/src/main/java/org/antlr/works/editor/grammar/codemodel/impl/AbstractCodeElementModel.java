@@ -17,7 +17,6 @@ import org.antlr.netbeans.editor.text.OffsetRegion;
 import org.antlr.netbeans.editor.text.SnapshotPositionRegion;
 import org.antlr.v4.runtime.misc.Interval;
 import org.antlr.v4.runtime.tree.ParseTree;
-import org.antlr.works.editor.antlr4.parsing.ParseTrees;
 import org.antlr.works.editor.grammar.codemodel.CodeElementModel;
 import org.antlr.works.editor.grammar.codemodel.CodeElementPositionRegion;
 import org.netbeans.api.annotations.common.CheckForNull;
@@ -66,8 +65,7 @@ public abstract class AbstractCodeElementModel implements CodeElementModel {
         if (node == null) {
             return null;
         }
-
-        Interval sourceInterval = ParseTrees.getSourceInterval(node);
+        Interval sourceInterval = node.getSourceInterval();
         return new OffsetRegion(sourceInterval.a, sourceInterval.length());
     }
 
