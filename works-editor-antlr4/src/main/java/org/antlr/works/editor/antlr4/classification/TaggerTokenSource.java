@@ -21,8 +21,7 @@ import org.antlr.v4.runtime.CommonTokenFactory;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.TokenFactory;
 import org.antlr.v4.runtime.TokenSource;
-import org.antlr.v4.runtime.misc.Tuple;
-import org.antlr.v4.runtime.misc.Tuple2;
+import org.antlr.v4.runtime.misc.Pair;
 import org.netbeans.api.annotations.common.NonNull;
 import org.openide.filesystems.FileObject;
 import org.openide.util.Parameters;
@@ -39,7 +38,7 @@ public class TaggerTokenSource implements TokenSource {
     private final Iterator<TaggedPositionRegion<TokenTag<Token>>> tagIterator;
     private TokenTag<Token> previousTag;
     private CharStream input;
-    private Tuple2<? extends TokenSource, CharStream> tokenFactorySourcePair;
+    private Pair<? extends TokenSource, CharStream> tokenFactorySourcePair;
     private int line = -1;
     private int charPositionInLine = -1;
     private TokenFactory tokenFactory = CommonTokenFactory.DEFAULT;
@@ -119,17 +118,16 @@ public class TaggerTokenSource implements TokenSource {
     public CharStream getInputStream() {
         if (input == null) {
             input = new DocumentSnapshotCharStream(snapshot);
-            tokenFactorySourcePair = Tuple.create(this, input);
+            tokenFactorySourcePair = new Pair<>(this, input);
         }
         return input;
     }
 
     @NonNull
-    protected Tuple2<? extends TokenSource, CharStream> getTokenFactorySourcePair() {
+    protected Pair<? extends TokenSource, CharStream> getTokenFactorySourcePair() {
         if (tokenFactorySourcePair == null) {
-            tokenFactorySourcePair = Tuple.create(this, getInputStream());
+            tokenFactorySourcePair = new Pair<>(this, getInputStream());
         }
-
         return tokenFactorySourcePair;
     }
 

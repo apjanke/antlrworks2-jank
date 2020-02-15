@@ -35,7 +35,7 @@ import org.antlr.v4.runtime.RuleContext;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.TokenSource;
 import org.antlr.v4.runtime.misc.Interval;
-import org.antlr.v4.runtime.misc.Tuple2;
+import org.antlr.v4.runtime.misc.Pair;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.antlr.works.editor.antlr4.classification.TaggerTokenSource;
@@ -322,7 +322,7 @@ public abstract class AbstractIndentTask implements IndentTask {
      * in virtual spaces. Return {@code null} to continue searching ancestors.
      */
     @CheckForNull
-    protected abstract Tuple2<? extends ParseTree, Integer> getAlignmentElement(Map.Entry<RuleContext, CaretReachedException> parseTree, @NonNull ParseTree targetElement, @NonNull ParseTree container, @NullAllowed List<? extends ParseTree> priorSiblings);
+    protected abstract Pair<? extends ParseTree, Integer> getAlignmentElement(Map.Entry<RuleContext, CaretReachedException> parseTree, @NonNull ParseTree targetElement, @NonNull ParseTree container, @NullAllowed List<? extends ParseTree> priorSiblings);
 
     protected int getIndent(final Map.Entry<RuleContext, CaretReachedException> parseTree, final ParseTree firstNodeOnLine, int lineStartOffset) throws BadLocationException {
         for (ParseTree ancestor = firstNodeOnLine; ancestor != null; ancestor = ancestor.getParent()) {
@@ -346,12 +346,12 @@ public abstract class AbstractIndentTask implements IndentTask {
                 }
             }
 
-            Tuple2<? extends ParseTree, Integer> alignmentElement = getAlignmentElement(parseTree, firstNodeOnLine, ancestor, siblings);
+            Pair<? extends ParseTree, Integer> alignmentElement = getAlignmentElement(parseTree, firstNodeOnLine, ancestor, siblings);
             if (alignmentElement == null) {
                 continue;
             }
 
-            Token startToken = ParseTrees.getStartSymbol(alignmentElement.getItem1());
+            Token startToken = ParseTrees.getStartSymbol(alignmentElement.a);
             String beginningOfLineText = startToken.getTokenSource().getInputStream().getText(new Interval(startToken.getStartIndex() - startToken.getCharPositionInLine(), startToken.getStartIndex() - 1));
             int elementIndent = 0;
             for (int i = 0; i < beginningOfLineText.length(); i++) {
@@ -367,10 +367,12 @@ public abstract class AbstractIndentTask implements IndentTask {
             }
 
             if (LOGGER.isLoggable(Level.FINE)) {
-                LOGGER.log(Level.FINE, "Indent {0} relative to {1} (offset {2}) => {3}", new Object[] { firstNodeOnLine, alignmentElement.getItem1(), alignmentElement.getItem2(), elementIndent + alignmentElement.getItem2() });
+                LOGGER.log(Level.FINE, "Indent {0} relative to {1} (offset {2}) => {3}", new Object[] {
+                        firstNodeOnLine, alignmentElement.a, alignmentElement.b, elementIndent + alignmentElement.b
+                });
             }
 
-            return elementIndent + alignmentElement.getItem2();
+            return elementIndent + alignmentElement.b;
         }
 
         return -1;

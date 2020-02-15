@@ -13,8 +13,7 @@ import org.antlr.v4.runtime.CommonTokenFactory;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.TokenFactory;
 import org.antlr.v4.runtime.TokenSource;
-import org.antlr.v4.runtime.misc.Tuple;
-import org.antlr.v4.runtime.misc.Tuple2;
+import org.antlr.v4.runtime.misc.Pair;
 
 /**
  *
@@ -23,7 +22,7 @@ import org.antlr.v4.runtime.misc.Tuple2;
 public class CodeCompletionTokenSource implements TokenSource {
     private final int caretOffset;
     private final TokenSource source;
-    private final Tuple2<? extends TokenSource, CharStream> tokenFactorySourcePair;
+    private final Pair<TokenSource, CharStream> tokenFactorySourcePair;
 
     private TokenFactory tokenFactory = CommonTokenFactory.DEFAULT;
 
@@ -32,7 +31,7 @@ public class CodeCompletionTokenSource implements TokenSource {
     public CodeCompletionTokenSource(int caretOffset, TokenSource source) {
         this.caretOffset = caretOffset;
         this.source = source;
-        this.tokenFactorySourcePair = Tuple.create(source, source.getInputStream());
+        this.tokenFactorySourcePair = new Pair<>(source, source.getInputStream());
     }
 
     @Override

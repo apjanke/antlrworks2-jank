@@ -91,8 +91,9 @@ public abstract class AbstractForestParser<TParser extends CodeCompletionParser>
                 return;
             }
 
-            for (parseTree = ex.getFinalContext(); parseTree.getParent() != null; parseTree = parseTree.getParent()) {
-                // intentionally blank
+            parseTree = ex.getFinalContext();
+            while (parseTree.getParent() != null) {
+                parseTree = parseTree.getParent();
             }
 
             if (ex.getCause() instanceof FailedPredicateException) {
@@ -103,16 +104,16 @@ public abstract class AbstractForestParser<TParser extends CodeCompletionParser>
                 IntervalSet alts = new IntervalSet();
                 IntervalSet semanticAlts = new IntervalSet();
                 for (ATNConfig c : ex.getTransitions().keySet()) {
-                    if (semanticAlts.contains(c.getAlt())) {
+                    if (semanticAlts.contains(c.alt)) {
                         continue;
                     }
 
-                    alts.add(c.getAlt());
+                    alts.add(c.alt);
 
                     @SuppressWarnings("unchecked")
                     Recognizer<Token, ?> recognizer = parser instanceof Recognizer ? (Recognizer<Token, ?>)parser : null;
-                    if (recognizer == null || c.getSemanticContext().eval(recognizer, ex.getFinalContext())) {
-                        semanticAlts.add(c.getAlt());
+                    if (recognizer == null || c.semanticContext.eval(recognizer, ex.getFinalContext())) {
+                        semanticAlts.add(c.alt);
                     }
                 }
 
@@ -132,7 +133,7 @@ public abstract class AbstractForestParser<TParser extends CodeCompletionParser>
                         state = state.transition(0).target;
                     } else if (state instanceof PlusBlockStartState && ((PlusBlockStartState)state).decision == -1) {
                         state = ((PlusBlockStartState)state).loopBackState;
-                        assert state instanceof PlusLoopbackState;
+                        assert state != null;
                     }
 
                     if (state instanceof DecisionState) {

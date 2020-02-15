@@ -82,10 +82,10 @@ public abstract class AbstractCompletionParserATNSimulator extends ParserATNSimu
         this.decisionPoints = decisionPoints;
         this.selections = selections;
         this.caretTransitions = null;
-        if (decisionPoints != null && !decisionPoints.isEmpty()) {
-            _firstDecisionIndex = decisionPoints.get(0).inputIndex;
-        } else {
+        if (decisionPoints.isEmpty()) {
             _firstDecisionIndex = Integer.MAX_VALUE;
+        } else {
+            _firstDecisionIndex = decisionPoints.get(0).inputIndex;
         }
     }
 
