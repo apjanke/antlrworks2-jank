@@ -11,6 +11,10 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="antlr-works-editor" />
+    <orderEntry type="module" module-name="works-editor-antlr4" />
+    <orderEntry type="module" module-name="editor-completionext" />
+    <orderEntry type="library" name="Maven: org.netbeans.api:org-netbeans-modules-sampler:RELEASE112" level="project" />
+    <orderEntry type="module" module-name="tvl-editor-actions" />
     <orderEntry type="library" name="Maven: javax.annotation:javax.annotation-api:1.3.2" level="project" />
     <orderEntry type="library" name="Maven: org.checkerframework:checker-qual:3.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.checkerframework:jdk8:3.1.0" level="project" />
@@ -56,7 +60,6 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.modules:org-netbeans-core:RELEASE112" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.modules:org-netbeans-bootstrap:RELEASE112" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.api:org-netbeans-modules-keyring:RELEASE112" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.api:org-netbeans-modules-sampler:RELEASE112" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.api:org-netbeans-swing-plaf:RELEASE112" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.api:org-openide-io:RELEASE112" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.netbeans.api:org-netbeans-api-intent:RELEASE112" level="project" />

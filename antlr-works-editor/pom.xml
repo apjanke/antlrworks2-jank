@@ -47,6 +47,11 @@
          <artifactId>antlr-works-netbeans</artifactId>
          <version>${project.version}</version>
       </dependency>
+      <dependency>
+         <groupId>${project.groupId}</groupId>
+         <artifactId>works-editor-antlr4</artifactId>
+         <version>${project.version}</version>
+      </dependency>
 
       <dependency>
          <groupId>javax.annotation</groupId>
