@@ -89,10 +89,6 @@
     <orderEntry type="library" name="Maven: org.glassfish:javax.json:1.0.4" level="project" />
     <orderEntry type="library" name="Maven: com.ibm.icu:icu4j:61.1" level="project" />
     <orderEntry type="module" module-name="tvl-editor-actions" />
-    <orderEntry type="module" module-name="antlr-works-editor" />
-    <orderEntry type="library" name="Maven: org.checkerframework:checker-qual:3.1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.checkerframework:jdk8:3.1.0" level="project" />
-    <orderEntry type="library" name="Maven: com.google.errorprone:javac:9+181-r4173-1" level="project" />
     <orderEntry type="module" module-name="antlr-works-netbeans" />
     <orderEntry type="library" name="Maven: org.netbeans.modules:org-netbeans-modules-options-editor:RELEASE112" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:4.13" level="project" />

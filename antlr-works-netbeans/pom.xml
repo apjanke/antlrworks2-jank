@@ -138,6 +138,18 @@
             </plugin>
          </plugins>
       </pluginManagement>
+      <plugins>
+         <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>nbm-maven-plugin</artifactId>
+            <version>3.13</version>
+            <extensions>true</extensions>
+            <configuration>
+               <brandingToken>${brandingToken}</brandingToken>
+               <cluster>${brandingToken}</cluster>
+            </configuration>
+         </plugin>
+      </plugins>
    </build>
 
 </project>
