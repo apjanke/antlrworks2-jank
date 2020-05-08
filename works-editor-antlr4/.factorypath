@@ -68,6 +68,7 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/netbeans/api/org-netbeans-modules-queries/RELEASE112/org-netbeans-modules-queries-RELEASE112.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/netbeans/api/org-netbeans-spi-tasklist/RELEASE112/org-netbeans-spi-tasklist-RELEASE112.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/netbeans/api/org-netbeans-modules-sampler/RELEASE112/org-netbeans-modules-sampler-RELEASE112.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/netbeans/modules/org-netbeans-modules-options-editor/RELEASE112/org-netbeans-modules-options-editor-RELEASE112.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/antlr/antlr4-runtime/4.8-1/antlr4-runtime-4.8-1.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/antlr/stringtemplate/4.0.2/stringtemplate-4.0.2.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/antlr/antlr-runtime/3.3/antlr-runtime-3.3.jar" enabled="true" runInBatchMode="false"/>
@@ -76,5 +77,4 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/abego/treelayout/org.abego.treelayout.core/1.0.3/org.abego.treelayout.core-1.0.3.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/com/ibm/icu/icu4j/61.1/icu4j-61.1.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="VARJAR" id="M2_REPO/org/netbeans/modules/org-netbeans-modules-options-editor/RELEASE112/org-netbeans-modules-options-editor-RELEASE112.jar" enabled="true" runInBatchMode="false"/>
 </factorypath>
