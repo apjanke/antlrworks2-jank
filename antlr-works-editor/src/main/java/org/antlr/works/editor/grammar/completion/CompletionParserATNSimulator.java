@@ -12,7 +12,6 @@ import org.antlr.v4.runtime.Parser;
 import org.antlr.v4.runtime.atn.ATN;
 import org.antlr.v4.runtime.atn.PredictionMode;
 import org.antlr.v4.runtime.misc.IntervalSet;
-import org.antlr.works.editor.antlr4.completion.AbstractCompletionParserATNSimulator;
 import org.antlr.works.editor.grammar.experimental.GrammarLexer;
 import org.netbeans.api.annotations.common.NonNull;
 

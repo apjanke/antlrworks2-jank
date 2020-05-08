@@ -26,18 +26,6 @@
                 <attr boolvalue="true" name="WrapperActionKey"/>
                 <attr name="delegate" newvalue="org.tvl.netbeans.editor.actions.ScrollPageUpAction"/>
             </file>
-            <file name="insert-line-below.instance">
-                <!--org.tvl.netbeans.editor.actions.InsertLineBelowAction-->
-                <attr bundlevalue="org.tvl.netbeans.editor.actions.Bundle#insert-line-below" name="displayName"/>
-                <attr bundlevalue="org.tvl.netbeans.editor.actions.Bundle#insert-line-below" name="ShortDescription"/>
-                <attr bundlevalue="org.tvl.netbeans.editor.actions.Bundle#insert-line-below" name="menuText"/>
-                <attr bundlevalue="org.tvl.netbeans.editor.actions.Bundle#insert-line-below" name="popupText"/>
-                <attr name="Name" stringvalue="insert-line-below"/>
-                <attr name="helpID" stringvalue="insert-line-below"/>
-                <attr methodvalue="org.netbeans.modules.editor.lib2.actions.WrapperEditorAction.create" name="instanceCreate"/>
-                <attr boolvalue="true" name="WrapperActionKey"/>
-                <attr name="delegate" newvalue="org.tvl.netbeans.editor.actions.InsertLineBelowAction"/>
-            </file>
             <file name="insert-line-above.instance">
                 <!--org.tvl.netbeans.editor.actions.InsertLineAboveAction-->
                 <attr bundlevalue="org.tvl.netbeans.editor.actions.Bundle#insert-line-above" name="displayName"/>
@@ -49,6 +37,18 @@
                 <attr methodvalue="org.netbeans.modules.editor.lib2.actions.WrapperEditorAction.create" name="instanceCreate"/>
                 <attr boolvalue="true" name="WrapperActionKey"/>
                 <attr name="delegate" newvalue="org.tvl.netbeans.editor.actions.InsertLineAboveAction"/>
+            </file>
+            <file name="insert-line-below.instance">
+                <!--org.tvl.netbeans.editor.actions.InsertLineBelowAction-->
+                <attr bundlevalue="org.tvl.netbeans.editor.actions.Bundle#insert-line-below" name="displayName"/>
+                <attr bundlevalue="org.tvl.netbeans.editor.actions.Bundle#insert-line-below" name="ShortDescription"/>
+                <attr bundlevalue="org.tvl.netbeans.editor.actions.Bundle#insert-line-below" name="menuText"/>
+                <attr bundlevalue="org.tvl.netbeans.editor.actions.Bundle#insert-line-below" name="popupText"/>
+                <attr name="Name" stringvalue="insert-line-below"/>
+                <attr name="helpID" stringvalue="insert-line-below"/>
+                <attr methodvalue="org.netbeans.modules.editor.lib2.actions.WrapperEditorAction.create" name="instanceCreate"/>
+                <attr boolvalue="true" name="WrapperActionKey"/>
+                <attr name="delegate" newvalue="org.tvl.netbeans.editor.actions.InsertLineBelowAction"/>
             </file>
         </folder>
     </folder>
