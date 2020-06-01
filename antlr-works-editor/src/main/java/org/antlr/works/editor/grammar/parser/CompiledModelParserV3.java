@@ -58,7 +58,7 @@ public class CompiledModelParserV3 extends CompiledModelParser {
             parser.setTreeAdaptor(new ANTLRErrorProvidingParser.grammar_Adaptor(parser));
 
             try {
-                ErrorManager.setErrorListener(new ANTLRErrorProvidingParser.ErrorListener(snapshot));
+                ErrorManager.setErrorListener(new ANTLRErrorProvidingParser.ToolListener(snapshot));
                 Tool tool = new Tool();
                 tool.setLibDirectory(new File(snapshot.getVersionedDocument().getFileObject().getPath()).getParent());
                 GrammarWrapper g = new GrammarWrapper(tool, snapshot);

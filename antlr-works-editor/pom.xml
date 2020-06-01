@@ -94,7 +94,6 @@
          <artifactId>checker-qual</artifactId>
          <version>3.1.0</version>
       </dependency>
-      <!-- If using JDK 8, add the following additional dependencies -->
       <dependency>
          <groupId>org.checkerframework</groupId>
          <artifactId>jdk8</artifactId>
@@ -104,6 +103,13 @@
          <groupId>com.google.errorprone</groupId>
          <artifactId>javac</artifactId>
          <version>9+181-r4173-1</version>
+      </dependency>
+
+      <!-- NetBeans stuff -->
+      <dependency>
+         <groupId>org.netbeans.api</groupId>
+         <artifactId>org-netbeans-modules-editor-errorstripe-api</artifactId>
+         <version>${netbeans.version}</version>
       </dependency>
    </dependencies>
 </project>

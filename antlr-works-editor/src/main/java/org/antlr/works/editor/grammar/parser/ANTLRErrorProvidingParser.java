@@ -10,7 +10,7 @@ package org.antlr.works.editor.grammar.parser;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.antlr.grammar.v3.ANTLRParser;
+import org.antlr.v4.parse.ANTLRParser;
 import org.antlr.netbeans.editor.parsing.SyntaxError;
 import org.antlr.netbeans.editor.text.DocumentSnapshot;
 import org.antlr.runtime.IntStream;
@@ -24,12 +24,11 @@ import org.antlr.runtime.UnwantedTokenException;
 import org.antlr.runtime.tree.CommonTreeAdaptor;
 import org.antlr.runtime.tree.Tree;
 import org.antlr.runtime.tree.TreeNodeStream;
-import org.antlr.tool.ANTLRErrorListener;
-import org.antlr.tool.GrammarAST;
-import org.antlr.tool.GrammarSyntaxMessage;
-import org.antlr.tool.Message;
-import org.antlr.tool.ToolMessage;
-import org.antlr.works.editor.antlr3.parsing.AntlrSyntaxErrorV3;
+import org.antlr.v4.tool.ast.GrammarAST;
+import org.antlr.v4.tool.GrammarSyntaxMessage;
+import org.antlr.v4.tool.ANTLRToolListener;
+import org.antlr.v4.tool.ANTLRMessage;
+import org.antlr.works.editor.antlr4.parsing.AntlrSyntaxErrorV4;
 import org.netbeans.api.annotations.common.NonNull;
 import org.netbeans.spi.editor.hints.Severity;
 
@@ -60,15 +59,15 @@ public class ANTLRErrorProvidingParser extends ANTLRParser {
     public void displayRecognitionError(String[] tokenNames, RecognitionException e) {
         //String header = getErrorHeader(e);
         String message = getErrorMessage(e, tokenNames);
-        syntaxErrors.add(new AntlrSyntaxErrorV3(snapshot, e != null ? e.token : null, e, message, Severity.ERROR));
+        syntaxErrors.add(new AntlrSyntaxErrorV4(snapshot, e != null ? e.token : null, e, message, Severity.ERROR));
 
         super.displayRecognitionError(tokenNames, e);
     }
 
-    public static final class ErrorListener implements ANTLRErrorListener {
+    public static final class ToolListener implements ANTLRToolListener {
         private final DocumentSnapshot snapshot;
 
-        public ErrorListener(DocumentSnapshot snapshot) {
+        public ToolListener(DocumentSnapshot snapshot) {
             this.snapshot = snapshot;
         }
 
@@ -77,7 +76,7 @@ public class ANTLRErrorProvidingParser extends ANTLRParser {
         }
 
         @Override
-        public void error(Message msg) {
+        public void error(ANTLRMessage msg) {
             if (msg instanceof GrammarSyntaxMessage) {
                 GrammarSyntaxMessage syntaxMessage = (GrammarSyntaxMessage)msg;
                 Token token = syntaxMessage.offendingToken;
@@ -97,12 +96,9 @@ public class ANTLRErrorProvidingParser extends ANTLRParser {
         }
 
         @Override
-        public void warning(Message msg) {
+        public void warning(ANTLRMessage msg) {
         }
 
-        @Override
-        public void error(ToolMessage tm) {
-        }
     }
 
     private static class GrammarASTErrorNode extends GrammarAST {

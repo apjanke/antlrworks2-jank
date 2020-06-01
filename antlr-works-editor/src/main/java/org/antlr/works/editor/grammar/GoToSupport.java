@@ -28,16 +28,12 @@ import org.antlr.netbeans.editor.text.DocumentSnapshot;
 import org.antlr.netbeans.editor.text.NormalizedSnapshotPositionRegionCollection;
 import org.antlr.netbeans.editor.text.OffsetRegion;
 import org.antlr.netbeans.editor.text.SnapshotPositionRegion;
-import org.antlr.netbeans.editor.text.VersionedDocument;
 import org.antlr.netbeans.editor.text.VersionedDocumentUtilities;
 import org.antlr.netbeans.parsing.spi.ParserData;
 import org.antlr.netbeans.parsing.spi.ParserDataOptions;
 import org.antlr.netbeans.parsing.spi.ParserTaskManager;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.Token;
-import org.antlr.v4.tool.Grammar;
-import org.antlr.works.editor.grammar.completion.GrammarCompletionProvider;
-import org.antlr.works.editor.grammar.experimental.GrammarLexer;
 import org.openide.filesystems.FileObject;
 import org.openide.loaders.DataObject;
 import org.openide.util.Exceptions;
@@ -58,74 +54,9 @@ public class GoToSupport {
         return dataObject != null ? dataObject.getPrimaryFile() : null;
     }
 
-    public static String getGoToElementToolTip(StyledDocument document, int offset, boolean goToSource, String key) {
-        Token token = getContext(document, offset);
-        if (token == null) {
-            return "";
-        }
-
-        switch (token.getType()) {
-
-        case GrammarLexer.ARG_ACTION_WORD:
-            if (token.getText().charAt(0) != '$') {
-                return "";
-            }
-
-            break;
-
-        default:
-            return "";
-        }
-
-        String text = token.getText();
-        if (text.length() == 0) {
-            return "";
-        }
-
-        if (text.charAt(0) == '$') {
-            return "reference";
-        } else if (Grammar.isTokenName(text)) {
-            return "lexer rule " + text;
-        } else {
-            return "parser rule " + text;
-        }
-    }
-
     public static void goTo(StyledDocument document, int offset, boolean goToSource) {
         Token token = getContext(document, offset);
-        if (token == null) {
-            return;
-        }
-
-        String ruleName;
-        switch (token.getType()) {
-        case GrammarParser.RULE_REF:
-        case GrammarParser.TOKEN_REF:
-            ruleName = token.getText();
-            break;
-            
-        default:
-            return;
-        }
-
-        ParserTaskManager taskManager = Lookup.getDefault().lookup(ParserTaskManager.class);
-        VersionedDocument versionedDocument = VersionedDocumentUtilities.getVersionedDocument(document);
-        Collection<Description> rules = GrammarCompletionProvider.getRulesFromGrammar(taskManager, versionedDocument.getCurrentSnapshot(), false);
-
-        Description target = null;
-        for (Description rule : rules) {
-            if (rule.getName() != null && rule.getName().equals(ruleName)) {
-                target = rule;
-                break;
-            }
-        }
-
-        if (target == null || target.getFileObject() == null) {
-            return;
-        }
-
-        OpenAction openAction = new OpenAction(target);
-        openAction.actionPerformed(new ActionEvent(target, 0, openAction.getValue(Action.NAME).toString()));
+        // TODO: Implement something useful
     }
 
     public static DocumentSpan getIdentifierSpan(StyledDocument document, int offset) {
@@ -136,23 +67,9 @@ public class GoToSupport {
             return null;
         }
 
-        switch (token.getType()) {
-        case GrammarParser.RULE_REF:
-        case GrammarParser.TOKEN_REF:
-        case GrammarParser.ACTION_REFERENCE:
-        case GrammarParser.ARG_ACTION_WORD:
-            break;
+        // TODO: implement me
 
-        default:
-            return null;
-        }
-
-        try {
-            return new DocumentSpan(document, token.getStartIndex(), token.getStopIndex() + 1);
-        } catch (BadLocationException ex) {
-            Exceptions.printStackTrace(ex);
-            return null;
-        }
+        return null;
     }
 
     public static Token getContext(Document document, int offset) {
