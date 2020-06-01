@@ -8,13 +8,7 @@
  */
 package org.antlr.works.editor.antlr4.highlighting;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Deque;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.event.DocumentEvent;
@@ -566,7 +560,7 @@ public abstract class ANTLRHighlighterBaseV4<TState extends LineStateInfo<TState
 
             checkDirtyLineBounds();
 
-            if (Utils.equals(previous, state)) {
+            if (Objects.equals(previous, state)) {
                 return false;
             }
         }

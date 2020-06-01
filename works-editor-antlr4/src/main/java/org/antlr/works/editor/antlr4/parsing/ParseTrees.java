@@ -8,11 +8,8 @@
  */
 package org.antlr.works.editor.antlr4.parsing;
 
-import java.util.ArrayList;
-import java.util.BitSet;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Parser;
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -256,7 +253,7 @@ public final class ParseTrees {
 
         if (node instanceof TerminalNode) {
             TerminalNode terminalNode = (TerminalNode)node;
-            if (Utils.equals(terminalNode.getSymbol(), symbol)) {
+            if (Objects.equals(terminalNode.getSymbol(), symbol)) {
                 return terminalNode;
             }
 
@@ -330,7 +327,6 @@ public final class ParseTrees {
 
     /** Return a list of all ancestors of this node.  The first node of
      *  list is the root and the last is the parent of this node.
-     * @param <T>
      * @param t
      * @return
      */

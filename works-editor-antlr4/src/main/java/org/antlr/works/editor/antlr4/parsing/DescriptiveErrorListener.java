@@ -21,7 +21,7 @@ public class DescriptiveErrorListener extends BaseErrorListener {
     public static DescriptiveErrorListener INSTANCE = new DescriptiveErrorListener();
 
     @Override
-    public <T extends Token> void syntaxError(Recognizer<T, ?> recognizer, T offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e) {
+    public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e) {
         String sourceName = recognizer.getInputStream().getSourceName();
         sourceName = !sourceName.isEmpty() ? sourceName+": " : "";
         System.err.println(sourceName+"line "+line+":"+charPositionInLine+" "+msg);

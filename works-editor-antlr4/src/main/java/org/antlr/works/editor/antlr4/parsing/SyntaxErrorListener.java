@@ -25,6 +25,7 @@ import org.openide.util.Parameters;
  * @author Sam Harwell
  */
 public class SyntaxErrorListener implements ANTLRErrorListener {
+
     @NonNull
     private final DocumentSnapshot snapshot;
 
@@ -47,13 +48,8 @@ public class SyntaxErrorListener implements ANTLRErrorListener {
     }
 
     @Override
-    public <T extends Token> void syntaxError2(Recognizer<T, ?> recognizer, T offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e) {
-        syntaxErrors.add(new AntlrSyntaxErrorV4(snapshot, offendingSymbol, e, msg, Severity.ERROR));
-    }
-
-    @Override
     public void syntaxError(Recognizer<?, ?> recognizer, Object offendingSymbol, int line, int charPositionInLine, String msg, RecognitionException e) {
-        syntaxErrors.add(new AntlrSyntaxErrorV4(snapshot, offendingSymbol, e, msg, Severity.ERROR));
+        syntaxErrors.add(new AntlrSyntaxErrorV4(snapshot, (Token) offendingSymbol, e, msg, Severity.ERROR));
     }
 
     @Override
@@ -70,4 +66,5 @@ public class SyntaxErrorListener implements ANTLRErrorListener {
     public void reportContextSensitivity(Parser recognizer, DFA dfa, int startIndex, int stopIndex, int prediction, ATNConfigSet configs) {
 
     }
+
 }
